@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SKYGLASS — Glasgow</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="sky"></canvas>
+
+<header id="hud-top">
+  <h1 id="brand">SKYGLASS<button id="loc" type="button" title="click to change location">GLASGOW</button><input id="loc-input" hidden placeholder="City or place…"></h1>
+  <time id="clock">--:--:-- UTC</time>
+</header>
+
+<aside id="hud-left">
+  <p class="hud-line"><span id="count-air">0</span> Aircraft in view</p>
+  <p class="hud-line"><span id="count-sat">0</span> Satellites overhead</p>
+  <p class="hud-line dim" id="status">Connecting…</p>
+  <p class="hud-line" id="follow-line" hidden>◉ Following <span id="follow-name"></span> <em>✕ Release</em></p>
+</aside>
+
+<aside id="legend">
+  <section>
+    <h2 class="lg-title">AIRCRAFT</h2>
+    <dl>
+      <dt><i style="background:#45d6e6"></i></dt>
+      <dd>airliner / heavy</dd>
+      <dt><i style="background:#8be07a"></i></dt>
+      <dd>light / GA</dd>
+      <dt><i style="background:#ffab40"></i></dt>
+      <dd>rotorcraft</dd>
+      <dt><i style="background:#ff6b6b"></i></dt>
+      <dd>military</dd>
+      <dt><i style="background:#b0a8c0"></i></dt>
+      <dd>other / unknown</dd>
+    </dl>
+  </section>
+  <section>
+    <h2 class="lg-title">SATELLITES</h2>
+    <dl>
+      <dt><i style="background:#ffd54f"></i></dt>
+      <dd>crewed station</dd>
+      <dt><i style="background:#64b5f6"></i></dt>
+      <dd>GNSS (GPS / Galileo)</dd>
+      <dt><i style="background:#4db6ac"></i></dt>
+      <dd>weather / science</dd>
+      <dt><i style="background:#8e7cc3"></i></dt>
+      <dd>comms constellation</dd>
+    </dl>
+  </section>
+  <p class="lg-hint">scroll to zoom · hover for details<br>click to follow · click sky to release</p>
+</aside>
+
+<article id="info-card" hidden></article>
+
+<script src="vendor/satellite.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
